@@ -6,7 +6,7 @@ pipeline{
   stages {
       stage ('startERPDatabase'){
       steps{
-           sh 'sleep 60s'
+           sh 'sleep 30s'
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > release.txt'
            sh 'sudo su bramireddy /home/bramireddy/space.sh '
