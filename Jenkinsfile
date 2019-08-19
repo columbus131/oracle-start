@@ -9,7 +9,7 @@ pipeline{
            sh 'sleep 30s'
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > release.txt'
-           sh 'sudo su bramireddy /home/bramireddy/space.sh '
+           //sh 'sudo su bramireddy /home/bramireddy/space.sh '
            sh  'ls -ltr'
            sh 'pwd > present.txt'
       }
@@ -26,7 +26,8 @@ pipeline{
            echo 'Patching the Database Server'
            //sh 'sudo yum update --security --assumeno'
            //sh 'sleep 120s'
-           sh 'sudo cat  /var/log/yum.log'
+           //sh 'sudo cat  /var/log/yum.log'
+           sh 'sudo su bramireddy /home/bramireddy/patchlog.sh '
            //sh 'nohup sudo reboot &>/dev/null & exit'
       }
     }
