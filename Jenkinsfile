@@ -4,8 +4,9 @@ pipeline{
     }
   }
   stages {
-      stage ('stopERPDatabase'){
+      stage ('startERPDatabase'){
       steps{
+           sh 'sleep 60s'
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > release.txt'
            sh 'sudo su bramireddy /home/bramireddy/space.sh '
@@ -13,14 +14,14 @@ pipeline{
            sh 'pwd > present.txt'
       }
       }
-      stage ('stopERPApplication'){
+      stage ('startERPApplication'){
       steps{
            echo 'stopping the Database' 
            //sh 'sleep 10s'
            //sh 'exit 1'
       }
   }
-    stage ('Sanity Check'){
+    stage ('SanityCheck'){
       steps{
            echo 'Patching the Database Server'
            //sh 'sudo yum update --security --assumeno'
