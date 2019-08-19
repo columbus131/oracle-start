@@ -30,6 +30,11 @@ pipeline{
            //sh 'nohup sudo reboot &>/dev/null & exit'
       }
     }
+    stage ('NexposeScan'){
+      steps{
+          echo 'Scan Kickoff'
+      }
+    }
   }
   post {
     success {
