@@ -44,9 +44,7 @@ pipeline{
              body: "Patching Completed on ERP Application  ${env.BUILD_URL}/consoleText"
     }
      failure {
-        mail to: 'bramireddy@idirect.net',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Services  Failed for some reason  ${env.BUILD_URL}/consoleText"
+               build job: 'oraclestop', propagate: true, wait: true
     }
   }
 }
