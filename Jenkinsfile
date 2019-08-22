@@ -6,7 +6,7 @@ pipeline{
   stages {
       stage ('startERPDatabase'){
       steps{
-           sh 'sleep 30s'
+           //sh 'sleep 30s'
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > release.txt'
            //sh 'sudo su bramireddy /home/bramireddy/space.sh '
@@ -26,7 +26,7 @@ pipeline{
            echo 'Patching the Database Server'
            //sh 'sudo yum update --security --assumeno'
            //sh 'sleep 120s'
-           sh '/home/jenkins/patchlog.sh '
+           sh '/home/jenkins/patchlog.sh'
            //sh 'nohup sudo reboot &>/dev/null & exit'
       }
     }
