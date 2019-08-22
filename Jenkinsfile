@@ -44,7 +44,10 @@ pipeline{
              body: "Patching Completed on ERP Application  ${env.BUILD_URL}/consoleText"
     }
      failure {
-               build job: 'oraclestop', propagate: true, wait: true
+               echo 'Failed'
+           mail to: 'bramireddy@idirect.net',
+             subject: " Services Failed to start the application : ${currentBuild.fullDisplayName}",
+             body: "Services Failed to Start on ERP Application  ${env.BUILD_URL}/consoleText"
     }
   }
 }
