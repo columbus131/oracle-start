@@ -26,7 +26,7 @@ pipeline{
            echo 'Patching the Database Server'
            //sh 'sudo yum update --security --assumeno'
            //sh 'sleep 120s'
-           sh '/home/jenkins/patchlog.sh'
+           //sh '/home/jenkins/patchlog.sh'
            //sh 'nohup sudo reboot &>/dev/null & exit'
       }
     }
