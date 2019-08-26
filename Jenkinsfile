@@ -33,6 +33,7 @@ pipeline{
     stage ('NexposeScan'){
       steps{
           echo 'Scan Kickoff'
+          sh '/home/jenkins/nexpose-scan.sh'
       }
     }
   }
