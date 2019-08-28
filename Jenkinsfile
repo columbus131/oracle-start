@@ -33,7 +33,8 @@ pipeline{
     stage ('NexposeScan'){
       steps{
           echo 'Scan Kickoff'
-          sh '/home/jenkins/nexpose-scan.sh'
+          //sh '/home/jenkins/nexpose-scan.sh'
+          sh 'sudo python /root/scripts/nexpose-scan.py'
       }
     }
   }
