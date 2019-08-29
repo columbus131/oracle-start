@@ -41,13 +41,15 @@ pipeline{
   post {
     success {
                 echo 'Patching Completed'
-           mail to: 'bramireddy@idirect.net',
+           mail from: 'noreply@alfred.idirect.net',
+             to: 'bramireddy@idirect.net',
              subject: "Started  Services : ${currentBuild.fullDisplayName}",
              body: "Patching Completed on ERP Application  ${env.BUILD_URL}/consoleText"
     }
      failure {
                echo 'Failed'
-           mail to: 'bramireddy@idirect.net',
+           mail from: 'noreply@alfred.idirect.net',
+             to: 'bramireddy@idirect.net',
              subject: " Services Failed to start the application : ${currentBuild.fullDisplayName}",
              body: "Services Failed to Start on ERP Application  ${env.BUILD_URL}/consoleText"
     }
